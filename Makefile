@@ -1,4 +1,4 @@
-SRCS = $(shell find -name '*.[cS]')
+SRCS = $(shell find -name '*.c' && find -name '*.asm')
 OBJS = $(addsuffix .o,$(basename $(SRCS)))
 
 CC = gcc
@@ -15,7 +15,7 @@ kernel: $(OBJS)
 %.o: %.c
 		$(CC) $(CFLAGS) -c -o $@ $^
 
-%.o: %.S
+%.o: %.asm
 		$(ASSEMBLER) -f elf $^ -o $@	
 
 clean:
