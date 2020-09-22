@@ -4,7 +4,26 @@ char* video = (char*) 0xb8000;
 char    fgColor;
 char    bgColor;
 
-void    screen_set_color    (char   fg_col, char    bg_col) {
+typedef enum    Color {
+    Black   =   0x0,
+    Blue    =   0x1,
+    Green   =   0x2,
+    Cyan    =   0x3,
+    Red     =   0x4,
+    Magenta =   0x5,
+    Brown   =   0x6,
+    Light_Grey  =   0x7,
+    Dark_Grey   =   0x8,
+    Light_Blue  =   0x9,
+    Light_Green =   0x10,
+    Light_Cyan  =   0x11,
+    Light_Red   =   0x12,
+    Light_Magenta   =   0x13,
+    Light_Brown =   0x14,
+    White   =   0x15
+} Color;
+
+void    screen_set_color    (Color  fg_col, Color   bg_col) {
     fgColor =   fg_col;
     bgColor =   bg_col;
 }   
@@ -62,7 +81,7 @@ void init(void)
 
     /* Clears the screen. */
     screen_new_page();
-    screen_set_color(0x4, 0x6);
+    screen_set_color(Green, Blue);
 
     /* Print boot string */
     /*for (i = 0; hw[i] != '\0'; i++) {
