@@ -9,7 +9,7 @@ ASFLAGS = -m32
 CFLAGS = -m32 -Wall -g -fno-stack-protector -nostdinc
 LDFLAGS = -melf_i386 -Ttext=0x100000
 
-kernel: $(OBJS)
+gondor_os: $(OBJS)
 		$(LD) $(LDFLAGS) -o $@ $^
 
 %.o: %.c
