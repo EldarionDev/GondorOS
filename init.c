@@ -5,6 +5,7 @@ void init(void) {
 
     /* Clears the screen. */
     FRA_new_page();
-    FRA_set_color(Dark_Grey, Light_Brown);
+    FRA_set_color(Black, White);
     FRA_write(boot_string);
+    FRA_fill(Cyan);
 }

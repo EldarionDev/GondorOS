@@ -12,9 +12,15 @@ void    FRA_set_color   (FRA_Color  fgColor, FRA_Color  bgColor) {
 }
 
 void    FRA_new_page    () {
-    for     (int i = 0; i < (80 * 25); ++i) {
+    for (int i = 0; i < (80 * 25); ++i) {
         FRA_video_address[i * 2]    =   0;
         FRA_video_address[i * 2 + 1]    =   0x0;
+    }
+}
+
+void    FRA_fill        (FRA_Color      color) {
+    for (int i = 0; i < (80*25); ++i) {
+        FRA_video_address[i * 2 + 1] = ((color << 4) | (FRA_video_address[FRA_cursor_pos * 2 + 1] & 0x0F));
     }
 }
 

@@ -26,9 +26,11 @@ extern FRA_Color FRA_bg_color;
 extern char*    FRA_video_address;
 
 
-void    FRA_set_color   (FRA_Color  fgColor, FRA_Color  bgColor);
+void    FRA_set_color   (FRA_Color      fgColor, FRA_Color      bgColor);
 
 void    FRA_new_page    ();
+
+void    FRA_fill        (FRA_Color      color);
 
 int     FRA_write       (const char*    text);
 
