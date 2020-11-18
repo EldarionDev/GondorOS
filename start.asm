@@ -1,6 +1,7 @@
 section .text
 
 extern init
+extern load_gdt
 
 %define MB_MAGIC 0x1badb002
 %define MB_FLAGS 0x0
@@ -15,6 +16,7 @@ global _start
 _start:
     mov [kernel_stack], esp
     call init
+    call load_gdt
 
     _stop:
         cli
