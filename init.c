@@ -8,4 +8,6 @@ void init(void) {
     FRA_set_color(Black, White);
     FRA_write(boot_string);
     FRA_fill(Cyan);
+    FRA_set_color(Magenta, Red);
+    FRA_write("Anna ist cool!");
 }
