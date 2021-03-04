@@ -15,8 +15,8 @@ dd  MB_CHECKSUM
 global _start
 _start:
     mov [kernel_stack], esp
-    call init
     call load_gdt
+    call init
 
     _stop:
         cli
